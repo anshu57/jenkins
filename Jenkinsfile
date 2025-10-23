@@ -45,15 +45,15 @@ pipeline {
                 }
             }
         }
-        // stage('Build Docker Image') {
-        //     steps {
-        //         // Build Docker Image
-        //         script {
-        //             echo 'Building Docker Image...'
-        //             dockerImage = docker.build("${DOCKERHUB_REPOSITORY}:latest") 
-        //         }
-        //     }
-        // }
+        stage('Build Docker Image') {
+            steps {
+                // Build Docker Image
+                script {
+                    echo 'Building Docker Image...'
+                    dockerImage = docker.build("mlops-app-01") 
+                }
+            }
+        }
         // stage('Trivy Docker Image Scan') {
         //     steps {
         //         // Trivy Docker Image Scan
