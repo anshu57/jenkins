@@ -54,15 +54,15 @@ pipeline {
                 }
             }
         }
-        // stage('Trivy Docker Image Scan') {
-        //     steps {
-        //         // Trivy Docker Image Scan
-        //         script {
-        //             echo 'Scanning Docker Image with Trivy...'
-        //             sh "trivy image ${DOCKERHUB_REPOSITORY}:latest --format table -o trivy-image-report.html"
-        //         }
-        //     }
-        // }
+        stage('Trivy Docker Image Scan') {
+            steps {
+                // Trivy Docker Image Scan
+                script {
+                    echo 'Scanning Docker Image with Trivy...'
+                    sh "trivy image mlops-app-01:latest --format table -o trivy-image-report.html"
+                }
+            }
+        }
         // stage('Push Docker Image') {
         //     steps {
         //         // Push Docker Image to DockerHub
