@@ -27,15 +27,15 @@ pipeline {
                 }
             }
         }
-        // stage('Test Code') {
-        //     steps {
-        //         // Pytest code
-        //         script {
-        //             echo 'Testing Python Code...'
-        //             sh "pytest tests/"
-        //         }
-        //     }
-        // }
+        stage('Test Code') {
+            steps {
+                // Pytest code
+                script {
+                    echo 'Testing Python Code...'
+                    sh "pytest tests/"
+                }
+            }
+        }
         // stage('Trivy FS Scan') {
         //     steps {
         //         // Trivy Filesystem Scan
