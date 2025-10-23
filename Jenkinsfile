@@ -20,9 +20,7 @@ pipeline {
                 // Lint code
                 script {
                     echo 'Linting Python Code...'
-                    sh "python3 -m venv jenkins_env"
-                    sh ". jenkins_env/bin/activate"
-                    sh "python -m pip install -r requirements.txt"
+                    sh "python -m pip install --break-system-packages -r requirements.txt"
                     sh "pylint app.py train.py --output=pylint-report.txt --exit-zero"
                     sh "flake8 app.py train.py"
                     sh "black app.py train.py"
