@@ -74,14 +74,14 @@ pipeline {
                 }
             }
         }
-        // stage('Deploy') {
-        //     steps {
-        //         // Deploy Image to Amazon ECS
-        //         script {
-        //             echo 'Deploying to production...'
-        //                 sh "aws ecs update-service --cluster iquant-ecs --service iquant-ecs-svc --force-new-deployment"
-        //             }
-        //         }
-        //     }
+        stage('Deploy') {
+            steps {
+                // Deploy Image to Amazon ECS
+                script {
+                    echo 'Deploying to production...'
+                        sh "aws ecs update-service --cluster anshu-ecs --service anshu-ecs-svc --force-new-deployment"
+                    }
+                }
+            }
         }
     }
